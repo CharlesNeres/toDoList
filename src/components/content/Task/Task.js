@@ -7,24 +7,37 @@ class Task extends React.Component{
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            [this.props.index]: false            
+        }
     }
 
     handleClick(e){
         
     }
 
+    handleChange(e){
+        const name = e.target.name;        
+        
+        this.setState({
+            [name]: !this.state[name]
+        });
+    }
+
     render(){
-        const items = this.props.items;
+        const index = this.props.index; 
+        const value = this.props.value;  
+        
 
         return(
-            <TaskCss>
-                {items.map((item)=>
-                    <li key={item.toString()}>
-                        <input type="checkbox" onClick={this.handleClick}/>
-                        <span>{item}</span>
-                        <FontAwesomeIcon icon={ faX }/>
-                    </li>
-                )}                
+            <TaskCss>                
+                <li>                 
+                    <input type="checkbox" name={index}
+                            onChange={this.handleChange} />
+                    <span className={this.state[index] ? 'checked' : ''}>{value}</span>
+                    <FontAwesomeIcon icon={ faX } onClick={this.handleClick} />
+                </li>
             </TaskCss>
         )
     }

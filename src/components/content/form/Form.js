@@ -26,7 +26,9 @@ class Form extends React.Component{
         this.setState({value: ''});
     }
 
-    render(){        
+    render(){ 
+        const items = this.state.items;
+
         return(
             <>
                 <FormCss onSubmit={this.handleSubmit}>
@@ -35,7 +37,12 @@ class Form extends React.Component{
                         onChange={this.handleChange} 
                         placeholder="Create a new todo."/>
                 </FormCss>   
-                <Task items={this.state.items}/> 
+                <ul>
+                    { items.map((item, index) => 
+                        <Task key={index.toString()} value={item} index={index} /> 
+                    )}
+                </ul>
+                
             </>
         )
     }
