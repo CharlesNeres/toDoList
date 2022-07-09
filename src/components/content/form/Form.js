@@ -6,6 +6,7 @@ class Form extends React.Component{
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
         this.state = {
             value: '',
             items: []
@@ -14,6 +15,17 @@ class Form extends React.Component{
 
     handleChange(e){
         this.setState({value: e.target.value});
+    }
+
+    deleteItem(key){
+        let filteredItems = this.state.items.filter(function(item, index){
+            return (index !== key)
+        });
+        
+        console.log(filteredItems)
+        this.setState({
+            items: filteredItems
+        })
     }
 
     handleSubmit(e){
@@ -39,7 +51,8 @@ class Form extends React.Component{
                 </FormCss>   
                 <ul>
                     { items.map((item, index) => 
-                        <Task key={index.toString()} value={item} index={index} /> 
+                        <Task key={index.toString()} value={item} index={index} 
+                            delete={()=>this.deleteItem(index)} /> 
                     )}
                 </ul>
                 

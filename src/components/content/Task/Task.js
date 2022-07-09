@@ -6,15 +6,15 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 class Task extends React.Component{
     constructor(props){
         super(props);
-        this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.remove = this.remove.bind(this);
         this.state = {
             [this.props.index]: false            
         }
     }
 
-    handleClick(e){
-        
+    remove(key){
+        this.props.delete(key);        
     }
 
     handleChange(e){
@@ -29,14 +29,13 @@ class Task extends React.Component{
         const index = this.props.index; 
         const value = this.props.value;  
         
-
         return(
             <TaskCss>                
                 <li>                 
                     <input type="checkbox" name={index}
                             onChange={this.handleChange} />
                     <span className={this.state[index] ? 'checked' : ''}>{value}</span>
-                    <FontAwesomeIcon icon={ faX } onClick={this.handleClick} />
+                    <FontAwesomeIcon onClick={()=>this.remove(index)} icon={ faX } />                    
                 </li>
             </TaskCss>
         )
