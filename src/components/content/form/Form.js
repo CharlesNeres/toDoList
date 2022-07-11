@@ -1,6 +1,8 @@
 import React from "react";
 import FormCss from "./FormCss";
-import Task from "../Task/Task";
+import Task from "../task/Task";
+import ListTask from "../listTask/ListTask";
+
 class Form extends React.Component{
     constructor(props){
         super(props);
@@ -49,12 +51,12 @@ class Form extends React.Component{
                         onChange={this.handleChange} 
                         placeholder="Create a new todo."/>
                 </FormCss>   
-                <ul>
+                <ListTask>
                     { items.map((item, index) => 
                         <Task key={index.toString()} value={item} index={index} 
                             delete={()=>this.deleteItem(index)} /> 
                     )}
-                </ul>
+                </ListTask>
                 
             </>
         )

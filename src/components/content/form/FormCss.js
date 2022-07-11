@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FormCss = styled.form`
     margin-top: 1em;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
     width: 100%;
     background-color: #fff;
     /* padding: 0 1em; */

@@ -4,7 +4,7 @@ const BackgroundCss = styled.div`
     
     height: 100%;
     width: 100%;
-    background-color: var(--very-light-gray);
+    background-color: var(--very-light-grayish-blue);
     position: absolute;    
     
     header img{

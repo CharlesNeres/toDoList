@@ -30,13 +30,11 @@ class Task extends React.Component{
         const value = this.props.value;  
         
         return(
-            <TaskCss>                
-                <li>                 
-                    <input type="checkbox" name={index}
-                            onChange={this.handleChange} />
-                    <span className={this.state[index] ? 'checked' : ''}>{value}</span>
-                    <FontAwesomeIcon onClick={()=>this.remove(index)} icon={ faX } />                    
-                </li>
+            <TaskCss>                              
+                <input type="checkbox" name={index}
+                        onChange={this.handleChange} />
+                <span className={this.state[index] ? 'checked' : ''}>{value}</span>
+                <FontAwesomeIcon className="icone" onClick={()=>this.remove(index)} icon={ faX } />                                
             </TaskCss>
         )
     }
