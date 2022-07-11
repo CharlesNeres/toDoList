@@ -20,7 +20,7 @@ const TaskCss = styled.li`
     }
 
     span{
-        margin-left: 2%;
+        margin-left: .5em;
     }
 
     .icone{

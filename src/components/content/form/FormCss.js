@@ -5,7 +5,7 @@ const FormCss = styled.form`
     margin-bottom: 1em;
     width: 100%;
     background-color: #fff;
-    /* padding: 0 1em; */
+    padding: 0em .8em;
     height: 2em;
     border-radius: .2em;
     overflow: hidden;
@@ -13,7 +13,8 @@ const FormCss = styled.form`
     input[type="text"]{
         height: 100%;
         width: 90%;
-        float: right;
+        float: left;
+        margin-left: .5em;
         border: none;
         outline: none;        
     }
@@ -23,7 +24,6 @@ const FormCss = styled.form`
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        left: 4%;        
     }
 `;
 
