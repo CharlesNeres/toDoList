@@ -7,7 +7,7 @@ class Background extends React.Component{
         return(
             <BackgroundCss>
                 <header>
-                    <img src={background}/>
+                    {/* <img src={background}/> */}
                 </header>                
             </BackgroundCss>
         )
