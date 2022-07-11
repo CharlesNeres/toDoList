@@ -14,6 +14,7 @@ const BackgroundCss = styled.div`
         width: 100%;
         height: 30%;
         background-image: url(${bg_mobile_light});
+        background-size: cover;
     }
 
     @media screen and (min-width: 375px){
